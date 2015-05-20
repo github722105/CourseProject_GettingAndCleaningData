@@ -2,7 +2,7 @@ Information read from files on X_test and X_train were combined in X_merged.
 
 X_merged is processed further to produce X_mean_or_std that contains only variables on measurements on mean and standard deviation of such measured variable.
 
-The original 561 variables of X, after filtering out unnecessary variables, were reduced to 68 variables as shown below:
+The original 561 variables of X, after filtering out unnecessary variables, were reduced to 66 variables as shown below:
 X_mean_or_std:
  [1] "tBodyAccmeanX"            "tBodyAccmeanY"            "tBodyAccmeanZ"           
  [4] "tBodyAccstdX"             "tBodyAccstdY"             "tBodyAccstdZ"            
