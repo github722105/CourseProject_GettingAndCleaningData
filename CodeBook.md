@@ -4,6 +4,7 @@ X_merged is processed further to produce X_mean_or_std that contains only variab
 
 The original 561 variables of X, after filtering out unnecessary variables, were reduced to 66 variables as shown below:
 X_mean_or_std:
+
  [1] "tBodyAccmeanX"            "tBodyAccmeanY"            "tBodyAccmeanZ"           
  [4] "tBodyAccstdX"             "tBodyAccstdY"             "tBodyAccstdZ"            
  [7] "tGravityAccmeanX"         "tGravityAccmeanY"         "tGravityAccmeanZ"        
