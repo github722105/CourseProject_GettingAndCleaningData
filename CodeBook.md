@@ -40,11 +40,17 @@ Such transformation to descriptive activity name is made possible by using the i
 
   V1                 V2
    1            WALKING
+   
    2   WALKING_UPSTAIRS
+   
    3 WALKING_DOWNSTAIRS
+   
    4            SITTING
+   
    5           STANDING
+   
    6             LAYING
+   
 
 Similary, information on subject_test and subject_train were combined in subject_merged that has 10299 observations also like the two merged files mentioned above, namely, X_merged and y_merged.
 
