@@ -29,16 +29,24 @@ X_mean_or_std:
 "fBodyBodyGyroMagstd"      "fBodyBodyGyroJerkMagmean" "fBodyBodyGyroJerkMagstd"
 
 Information read from files on y and y_train were combined in y_merged. After giving descriptive variable name and transforming the raw data to meaningful and descriptive information, the first 5 observations of y_merged are as shown below:
+
   Activity
+  
 1 STANDING
+
 2 STANDING
+
 3 STANDING
+
 4 STANDING
+
 5 STANDING
+
 
 Such transformation to descriptive activity name is made possible by using the information stored in activity_labels dataset:
 
   V1                 V2
+  
    1            WALKING
    
    2   WALKING_UPSTAIRS
@@ -58,6 +66,7 @@ Similary, information on subject_test and subject_train were combined in subject
 X_mean_or_std, y_merged and subject_merged are further combined columnwise in data_final which contains a total of 68 variables and, needless to say, 10299 observations:
 
 'data_final':	10299 obs. of  68 variables:
+
  $ Subject                 : int  1 1 1 1 1 1 1 1 1 1 ...
  $ Activity                : Factor w/ 6 levels "LAYING","SITTING",..: 3 3 3 3 3 3 3 3 3 3 ...
  $ tBodyAccmeanX           : num  0.289 0.278 0.28 0.279 0.277 ...
@@ -130,6 +139,7 @@ X_mean_or_std, y_merged and subject_merged are further combined columnwise in da
 Determining the mean of each measurement for each subject and corresponding activity, because there are 30 subjects and 6 activities, the resulting information has 180 observations and 66 mean values for each measurement variable we are interested in:
 
 'data_frame':	180 obs. of  68 variables:
+
  $ Subject                 : int  1 1 1 1 1 1 2 2 2 2 ...
  $ Activity                : Factor w/ 6 levels "LAYING","SITTING",..: 1 2 3 4 5 6 1 2 3 4 ...
  $ tBodyAccmeanX           : num  0.222 0.261 0.279 0.277 0.289 ...
@@ -200,11 +210,15 @@ Determining the mean of each measurement for each subject and corresponding acti
  $ fBodyBodyGyroJerkMagstd : num  -0.933 -0.987 -0.995 -0.382 -0.392 ...
 
 First 3 observations of data_frame:
+
   Subject Activity tBodyAccmeanX tBodyAccmeanY tBodyAccmeanZ tBodyAccstdX tBodyAccstdY
+  
 1       1   LAYING     0.2215982  -0.040513953    -0.1132036   -0.9280565   -0.8368274
 2       1  SITTING     0.2612376  -0.001308288    -0.1045442   -0.9772290   -0.9226186
 3       1 STANDING     0.2789176  -0.016137590    -0.1106018   -0.9957599   -0.9731901
+
   tBodyAccstdZ tGravityAccmeanX tGravityAccmeanY tGravityAccmeanZ tGravityAccstdX
+  
 1   -0.8260614       -0.2488818        0.7055498       0.44581772      -0.8968300
 2   -0.9395863        0.8315099        0.2044116       0.33204370      -0.9684571
 3   -0.9797759        0.9429520       -0.2729838       0.01349058      -0.9937630
@@ -212,46 +226,67 @@ First 3 observations of data_frame:
 1      -0.9077200      -0.8523663        0.08108653      0.0038382040       0.010834236
 2      -0.9355171      -0.9490409        0.07748252     -0.0006191028      -0.003367792
 3      -0.9812260      -0.9763241        0.07537665      0.0079757309      -0.003685250
+
   tBodyAccJerkstdX tBodyAccJerkstdY tBodyAccJerkstdZ tBodyGyromeanX tBodyGyromeanY
+  
 1       -0.9584821       -0.9241493       -0.9548551    -0.01655309    -0.06448612
 2       -0.9864307       -0.9813720       -0.9879108    -0.04535006    -0.09192415
 3       -0.9946045       -0.9856487       -0.9922512    -0.02398773    -0.05939722
+
   tBodyGyromeanZ tBodyGyrostdX tBodyGyrostdY tBodyGyrostdZ tBodyGyroJerkmeanX tBodyGyroJerkmeanY
+  
 1     0.14868944    -0.8735439    -0.9510904    -0.9082847        -0.10727095        -0.04151729
 2     0.06293138    -0.9772113    -0.9664739    -0.9414259        -0.09367938        -0.04021181
 3     0.07480075    -0.9871919    -0.9877344    -0.9806456        -0.09960921        -0.04406279
+
   tBodyGyroJerkmeanZ tBodyGyroJerkstdX tBodyGyroJerkstdY tBodyGyroJerkstdZ tBodyAccMagmean
+  
 1        -0.07405012        -0.9186085        -0.9679072        -0.9577902      -0.8419292
 2        -0.04670263        -0.9917316        -0.9895181        -0.9879358      -0.9485368
 3        -0.04895055        -0.9929451        -0.9951379        -0.9921085      -0.9842782
+
   tBodyAccMagstd tGravityAccMagmean tGravityAccMagstd tBodyAccJerkMagmean tBodyAccJerkMagstd
+  
 1     -0.7951449         -0.8419292        -0.7951449          -0.9543963         -0.9282456
 2     -0.9270784         -0.9485368        -0.9270784          -0.9873642         -0.9841200
 3     -0.9819429         -0.9842782        -0.9819429          -0.9923678         -0.9930962
+
   tBodyGyroMagmean tBodyGyroMagstd tBodyGyroJerkMagmean tBodyGyroJerkMagstd fBodyAccmeanX
+  
 1       -0.8747595      -0.8190102           -0.9634610          -0.9358410    -0.9390991
 2       -0.9308925      -0.9345318           -0.9919763          -0.9883087    -0.9796412
 3       -0.9764938      -0.9786900           -0.9949668          -0.9947332    -0.9952499
+
   fBodyAccmeanY fBodyAccmeanZ fBodyAccstdX fBodyAccstdY fBodyAccstdZ fBodyAccJerkmeanX
+  
 1    -0.8670652    -0.8826669   -0.9244374   -0.8336256   -0.8128916        -0.9570739
 2    -0.9440846    -0.9591849   -0.9764123   -0.9172750   -0.9344696        -0.9865970
 3    -0.9770708    -0.9852971   -0.9960283   -0.9722931   -0.9779373        -0.9946308
+
   fBodyAccJerkmeanY fBodyAccJerkmeanZ fBodyAccJerkstdX fBodyAccJerkstdY fBodyAccJerkstdZ
+  
 1        -0.9224626        -0.9480609       -0.9641607       -0.9322179       -0.9605870
 2        -0.9815795        -0.9860531       -0.9874930       -0.9825139       -0.9883392
 3        -0.9854187        -0.9907522       -0.9950738       -0.9870182       -0.9923498
+
   fBodyGyromeanX fBodyGyromeanY fBodyGyromeanZ fBodyGyrostdX fBodyGyrostdY fBodyGyrostdZ
+  
 1     -0.8502492     -0.9521915     -0.9093027    -0.8822965    -0.9512320    -0.9165825
 2     -0.9761615     -0.9758386     -0.9513155    -0.9779042    -0.9623450    -0.9439178
 3     -0.9863868     -0.9889845     -0.9807731    -0.9874971    -0.9871077    -0.9823453
+
   fBodyAccMagmean fBodyAccMagstd fBodyBodyAccJerkMagmean fBodyBodyAccJerkMagstd
+  
 1      -0.8617676     -0.7983009              -0.9333004             -0.9218040
 2      -0.9477829     -0.9284448              -0.9852621             -0.9816062
 3      -0.9853564     -0.9823138              -0.9925425             -0.9925360
+
   fBodyBodyGyroMagmean fBodyBodyGyroMagstd fBodyBodyGyroJerkMagmean fBodyBodyGyroJerkMagstd
+  
 1           -0.8621902          -0.8243194               -0.9423669              -0.9326607
 2           -0.9584356          -0.9321984               -0.9897975              -0.9870496
 3           -0.9846176          -0.9784661               -0.9948154              -0.9946711
+
 
 This explanation should guide one in doing other analysis on measurements that were filtered out in doing this project.
 Hopefully I gave you some useful information so you can improve this process further.
