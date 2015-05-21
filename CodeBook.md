@@ -5,31 +5,30 @@ X_merged is processed further to produce X_mean_or_std that contains only variab
 The original 561 variables of X, after filtering out unnecessary variables, were reduced to 66 variables as shown below:
 X_mean_or_std:
 
- [1] "tBodyAccmeanX"            "tBodyAccmeanY"            "tBodyAccmeanZ"           
- [4] "tBodyAccstdX"             "tBodyAccstdY"             "tBodyAccstdZ"            
- [7] "tGravityAccmeanX"         "tGravityAccmeanY"         "tGravityAccmeanZ"        
-[10] "tGravityAccstdX"          "tGravityAccstdY"          "tGravityAccstdZ"         
-[13] "tBodyAccJerkmeanX"        "tBodyAccJerkmeanY"        "tBodyAccJerkmeanZ"       
-[16] "tBodyAccJerkstdX"         "tBodyAccJerkstdY"         "tBodyAccJerkstdZ"        
-[19] "tBodyGyromeanX"           "tBodyGyromeanY"           "tBodyGyromeanZ"          
-[22] "tBodyGyrostdX"            "tBodyGyrostdY"            "tBodyGyrostdZ"           
-[25] "tBodyGyroJerkmeanX"       "tBodyGyroJerkmeanY"       "tBodyGyroJerkmeanZ"      
-[28] "tBodyGyroJerkstdX"        "tBodyGyroJerkstdY"        "tBodyGyroJerkstdZ"       
-[31] "tBodyAccMagmean"          "tBodyAccMagstd"           "tGravityAccMagmean"      
-[34] "tGravityAccMagstd"        "tBodyAccJerkMagmean"      "tBodyAccJerkMagstd"      
-[37] "tBodyGyroMagmean"         "tBodyGyroMagstd"          "tBodyGyroJerkMagmean"    
-[40] "tBodyGyroJerkMagstd"      "fBodyAccmeanX"            "fBodyAccmeanY"           
-[43] "fBodyAccmeanZ"            "fBodyAccstdX"             "fBodyAccstdY"            
-[46] "fBodyAccstdZ"             "fBodyAccJerkmeanX"        "fBodyAccJerkmeanY"       
-[49] "fBodyAccJerkmeanZ"        "fBodyAccJerkstdX"         "fBodyAccJerkstdY"        
-[52] "fBodyAccJerkstdZ"         "fBodyGyromeanX"           "fBodyGyromeanY"          
-[55] "fBodyGyromeanZ"           "fBodyGyrostdX"            "fBodyGyrostdY"           
-[58] "fBodyGyrostdZ"            "fBodyAccMagmean"          "fBodyAccMagstd"          
-[61] "fBodyBodyAccJerkMagmean"  "fBodyBodyAccJerkMagstd"   "fBodyBodyGyroMagmean"    
-[64] "fBodyBodyGyroMagstd"      "fBodyBodyGyroJerkMagmean" "fBodyBodyGyroJerkMagstd"
+"tBodyAccmeanX"            "tBodyAccmeanY"            "tBodyAccmeanZ"           
+"tBodyAccstdX"             "tBodyAccstdY"             "tBodyAccstdZ"            
+"tGravityAccmeanX"         "tGravityAccmeanY"         "tGravityAccmeanZ"        
+"tGravityAccstdX"          "tGravityAccstdY"          "tGravityAccstdZ"         
+"tBodyAccJerkmeanX"        "tBodyAccJerkmeanY"        "tBodyAccJerkmeanZ"       
+"tBodyAccJerkstdX"         "tBodyAccJerkstdY"         "tBodyAccJerkstdZ"        
+"tBodyGyromeanX"           "tBodyGyromeanY"           "tBodyGyromeanZ"          
+"tBodyGyrostdX"            "tBodyGyrostdY"            "tBodyGyrostdZ"           
+"tBodyGyroJerkmeanX"       "tBodyGyroJerkmeanY"       "tBodyGyroJerkmeanZ"      
+"tBodyGyroJerkstdX"        "tBodyGyroJerkstdY"        "tBodyGyroJerkstdZ"       
+"tBodyAccMagmean"          "tBodyAccMagstd"           "tGravityAccMagmean"      
+"tGravityAccMagstd"        "tBodyAccJerkMagmean"      "tBodyAccJerkMagstd"      
+"tBodyGyroMagmean"         "tBodyGyroMagstd"          "tBodyGyroJerkMagmean"    
+"tBodyGyroJerkMagstd"      "fBodyAccmeanX"            "fBodyAccmeanY"           
+"fBodyAccmeanZ"            "fBodyAccstdX"             "fBodyAccstdY"            
+"fBodyAccstdZ"             "fBodyAccJerkmeanX"        "fBodyAccJerkmeanY"       
+"fBodyAccJerkmeanZ"        "fBodyAccJerkstdX"         "fBodyAccJerkstdY"        
+"fBodyAccJerkstdZ"         "fBodyGyromeanX"           "fBodyGyromeanY"          
+"fBodyGyromeanZ"           "fBodyGyrostdX"            "fBodyGyrostdY"           
+"fBodyGyrostdZ"            "fBodyAccMagmean"          "fBodyAccMagstd"          
+"fBodyBodyAccJerkMagmean"  "fBodyBodyAccJerkMagstd"   "fBodyBodyGyroMagmean"    
+"fBodyBodyGyroMagstd"      "fBodyBodyGyroJerkMagmean" "fBodyBodyGyroJerkMagstd"
 
 Information read from files on y and y_train were combined in y_merged. After giving descriptive variable name and transforming the raw data to meaningful and descriptive information, the first 5 observations of y_merged are as shown below:
-> head(y_merged, n=5)
   Activity
 1 STANDING
 2 STANDING
@@ -38,23 +37,21 @@ Information read from files on y and y_train were combined in y_merged. After gi
 5 STANDING
 
 Such transformation to descriptive activity name is made possible by using the information stored in activity_labels dataset:
-> activity_labels
-  V1                 V2
-1  1            WALKING
-2  2   WALKING_UPSTAIRS
-3  3 WALKING_DOWNSTAIRS
-4  4            SITTING
-5  5           STANDING
-6  6             LAYING
 
-Similary, information on subject_test and subject_train were combined in subject_merged that has 10299 observations also like the two merged files mentioned above, namely, X_merged and y_merged:
-> str(subject_merged)
-'data.frame':	10299 obs. of  1 variable:
- $ Subject: int  1 1 1 1 1 1 1 1 1 1 ...
+  V1                 V2
+   1            WALKING
+   2   WALKING_UPSTAIRS
+   3 WALKING_DOWNSTAIRS
+   4            SITTING
+   5           STANDING
+   6             LAYING
+
+Similary, information on subject_test and subject_train were combined in subject_merged that has 10299 observations also like the two merged files mentioned above, namely, X_merged and y_merged.
+
  
 X_mean_or_std, y_merged and subject_merged are further combined columnwise in data_final which contains a total of 68 variables and, needless to say, 10299 observations:
-> str(data_final)
-'data.frame':	10299 obs. of  68 variables:
+
+'data_final':	10299 obs. of  68 variables:
  $ Subject                 : int  1 1 1 1 1 1 1 1 1 1 ...
  $ Activity                : Factor w/ 6 levels "LAYING","SITTING",..: 3 3 3 3 3 3 3 3 3 3 ...
  $ tBodyAccmeanX           : num  0.289 0.278 0.28 0.279 0.277 ...
@@ -125,8 +122,8 @@ X_mean_or_std, y_merged and subject_merged are further combined columnwise in da
  $ fBodyBodyGyroJerkMagstd : num  -0.991 -0.996 -0.995 -0.995 -0.995 ...
  
 Determining the mean of each measurement for each subject and corresponding activity, because there are 30 subjects and 6 activities, the resulting information has 180 observations and 66 mean values for each measurement variable we are interested in:
-> str(data_frame)
-'data.frame':	180 obs. of  68 variables:
+
+'data_frame':	180 obs. of  68 variables:
  $ Subject                 : int  1 1 1 1 1 1 2 2 2 2 ...
  $ Activity                : Factor w/ 6 levels "LAYING","SITTING",..: 1 2 3 4 5 6 1 2 3 4 ...
  $ tBodyAccmeanX           : num  0.222 0.261 0.279 0.277 0.289 ...
@@ -196,7 +193,7 @@ Determining the mean of each measurement for each subject and corresponding acti
  $ fBodyBodyGyroJerkMagmean: num  -0.942 -0.99 -0.995 -0.319 -0.282 ...
  $ fBodyBodyGyroJerkMagstd : num  -0.933 -0.987 -0.995 -0.382 -0.392 ...
 
-> head(data_frame, n=3)
+First 3 observations of data_frame:
   Subject Activity tBodyAccmeanX tBodyAccmeanY tBodyAccmeanZ tBodyAccstdX tBodyAccstdY
 1       1   LAYING     0.2215982  -0.040513953    -0.1132036   -0.9280565   -0.8368274
 2       1  SITTING     0.2612376  -0.001308288    -0.1045442   -0.9772290   -0.9226186
@@ -251,5 +248,4 @@ Determining the mean of each measurement for each subject and corresponding acti
 3           -0.9846176          -0.9784661               -0.9948154              -0.9946711
 
 This explanation should guide one in doing other analysis on measurements that were filtered out in doing this project.
-
 Hopefully I gave you some useful information so you can improve this process further.
